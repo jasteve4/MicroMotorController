@@ -5,16 +5,18 @@ user-rtl:
 	  ./user_wrapper_test.v \
 	  ../rtl/async_reg.v \
 	  ../rtl/backend_cycle_controller.v \
+	  ../rtl/clock_mux.v \
 	  ../rtl/controller_core.v \
 	  ../rtl/dot_driver.v \
-	  ../rtl/driver_sequencer.v \
 	  ../rtl/driver_core.v \
+	  ../rtl/driver_sequencer.v \
 	  ../rtl/HBrigeDriver.v \
 	  ../rtl/impulse.v \
-	  ../rtl/spi_controller.v \
+	  ../rtl/spi_core.v \
 	  ../rtl/system_controller.v \
 	  ../rtl/user_project_wrapper.v \
 	  +vcs+initreg+random \
+	  -kdb \
 	  -debug_access+all 
 
 

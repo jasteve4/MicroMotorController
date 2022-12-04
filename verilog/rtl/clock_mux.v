@@ -37,7 +37,7 @@ module clock_mux(
   always@(posedge core_clock)
     sel_reg <= la_oenb;
   assign clock_out_a = (~sel_reg) ? core_clock : io_clock ;
-  assign clock_out_b = clock_out_b;
-  assign clock_out_c = clock_out_b;
+  assign clock_out_b = clock_out_a;
+  assign clock_out_c = clock_out_a;
 
 endmodule

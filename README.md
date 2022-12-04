@@ -10,34 +10,94 @@ This design is to precisely control the timing sequence of 10 micro-motors. The 
 
 ## Harding Design
 ```
-make actuator_driver_controller
-make user_project_wrrappper
+make driver_core
+make controller_core
+make spi_controller
+make user_project_wrappper
 ```
 ## RTL Simulation
 ```
-make verify-spi_transfer_test-rtl # run spi passthrough
-make verify-memory_test-rtl # run read and write to memory test
-make verify-actuator_driver_test0-rtl # set actuator to all zeros position test
-make verify-actuator_driver_test1-rtl # set actuator to count up and done one bit at a time
-make verify-actuator_driver_test1-rt2 # set actuator to count up and done one bit at a time, invert output test
+make verify-system_10dot_test # run full system test with 10 dot configuation
 ```
  ## GL Simulation
 ```
-make verify-spi_transfer_test-gl # run spi passthrough
-make verify-memory_test-gl # run read and write to memory test
-make verify-actuator_driver_test0-gl # set actuator to all zeros position test
-make verify-actuator_driver_test1-gl # set actuator to count up and done one bit at a time
-make verify-actuator_driver_test1-gl # set actuator to count up and done one bit at a time, invert output test
+make verify-system_10dot_test-gl # run full system test with 10 dot configuation
 ```
  ## GL+SDF Simulation
 ```
-make verify-spi_transfer_test-gl-sdf # run spi passthrough
-make verify-memory_test-gl-sdf # run read and write to memory test
-make verify-actuator_driver_test0-gl-sdf # set actuator to all zeros position test
-make verify-actuator_driver_test1-gl-sdf # set actuator to count up and done one bit at a time
-make verify-actuator_driver_test1-gl-sdf # set actuator to count up and done one bit at a time, invert output test
+make verify-system_10dot_test-gl-sdf # run full system test with 10 dot configuation
 ```
 ## Spi Commuation Packet
+```
+[31:0]  spi data packet size
+[31:30] system comtrol bits
+[29:26] driver device select
+[25:16] driver memroy address
+[15:0]  memory data
+```
 
-## Memory Mapped Registers
+## System Control 
+```
+00: run mode
+01: system config write
+10: N/A
+11: driver memory write
+```
+## Config Register
+```
+00: CCR0 Lower 16 bits
+01: CCR0 Higher 16 bits
+02: CCR1 Lower 16 bits
+03: CCR1 Lower 16 bits
+04: number of activation lower 16 bits
+05: number of activation higher 16 bits
+06: row reset value
+07: col reset value
+08: driver inveter per driver select
+09: row or col per driver select
+```
+## Driver Memory Mapped Registers
+```
+0-143: driver activation bit 48x48 bits, 144:16 bit registers
+144-191: driver select sequence, 48:16 bit registers
+192-164: driver output level, 3:16 bit registers
+```
+## Driver Output
+```
+-------        ------
+       |      |
+       |      |
+        ------
+0     CCR0   CCR1
+For driver level 1
+Driver outputs can be phase shiffed:
+-------                          driver 0       
+       |      
+       |      
+        ---------------------
+               -------           driver 1     
+              |       |         
+              |       |      
+--------------         -------
 
+0    CCR0    CCR1    CCR0
+```
+## Driver configuation
+```
+For each driver
+48 rows and 48 col, 2304 rounds
+each activation bit is round in the globel counter. The activation bit say that the output is active in the current round
+0xFFFFFF
+0x000000
+...
+0x000000
+is for row active output
+0x800000
+0x800000
+...
+0x800000
+is for col active output
+row and col congiuation can be uesd to limit the number of rounds per col and row
+4 rows and 4 cols, 16 rounds
+number of activations register needs to be set to NxM value  
+```

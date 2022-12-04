@@ -21,8 +21,25 @@
     // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_project_wrapper.v"
-    `include "gl/user_proj_example.v"
+    `include "gl/controller_core.v"
+    `include "gl/driver_core.v"
+    `include "gl/clock_mux.v"
+    `include "gl/spi_core.v"
 `else
+    `include "async_reg.v"
+    `include "backend_cycle_controller.v"
+    `include "clock_mux.v"
+    `include "controller_core.v"
+    `include "defines.v"
+    `include "dot_driver.v"
+    `include "driver_core.v"
+    `include "driver_sequencer.v"
+    `include "HBrigeDriver.v"
+    `include "impulse.v"
+    `include "sequencer_chip.v"
+    `include "spi_core.v"
+    `include "system_controller.v"
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
 `endif
+
+

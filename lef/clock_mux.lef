@@ -1,0 +1,101 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO clock_mux
+  CLASS BLOCK ;
+  FOREIGN clock_mux ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 250.000 BY 250.000 ;
+  PIN clock_out_a
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT -4.800 41.160 2.400 42.280 ;
+    END
+  END clock_out_a
+  PIN clock_out_b
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT -4.800 124.040 2.400 125.160 ;
+    END
+  END clock_out_b
+  PIN clock_out_c
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT -4.800 206.920 2.400 208.040 ;
+    END
+  END clock_out_c
+  PIN core_clock
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 61.880 -4.800 63.000 2.400 ;
+    END
+  END core_clock
+  PIN io_clock
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal3 ;
+        RECT 247.600 124.040 254.800 125.160 ;
+    END
+  END io_clock
+  PIN la_oenb
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER Metal2 ;
+        RECT 186.760 -4.800 187.880 2.400 ;
+    END
+  END la_oenb
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER Metal4 ;
+        RECT 10.170 15.380 13.270 231.580 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 190.170 15.380 193.270 231.580 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER Metal4 ;
+        RECT 28.770 15.380 31.870 231.580 ;
+    END
+    PORT
+      LAYER Metal4 ;
+        RECT 208.770 15.380 211.870 231.580 ;
+    END
+  END vssd1
+  OBS
+      LAYER Metal1 ;
+        RECT 6.720 15.380 243.040 231.580 ;
+      LAYER Metal2 ;
+        RECT 9.100 2.700 221.620 231.470 ;
+        RECT 9.100 1.820 61.580 2.700 ;
+        RECT 63.300 1.820 186.460 2.700 ;
+        RECT 188.180 1.820 221.620 2.700 ;
+      LAYER Metal3 ;
+        RECT 1.960 208.340 247.600 231.420 ;
+        RECT 2.700 206.620 247.600 208.340 ;
+        RECT 1.960 125.460 247.600 206.620 ;
+        RECT 2.700 123.740 247.300 125.460 ;
+        RECT 1.960 42.580 247.600 123.740 ;
+        RECT 2.700 40.860 247.600 42.580 ;
+        RECT 1.960 15.540 247.600 40.860 ;
+  END
+END clock_mux
+END LIBRARY
+

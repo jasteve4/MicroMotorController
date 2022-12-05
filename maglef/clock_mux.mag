@@ -1,7 +1,7 @@
 magic
 tech gf180mcuC
 magscale 1 5
-timestamp 1670271121
+timestamp 1670279955
 << obsm1 >>
 rect 672 1538 24304 23158
 << metal2 >>
@@ -56,7 +56,7 @@ string FIXED_BBOX 0 0 25000 25000
 string LEFclass BLOCK
 string LEFview TRUE
 string GDS_END 375058
-string GDS_FILE /home/jasteve4/Documents/MicroMotorController/openlane/clock_mux/runs/22_12_05_15_11/results/signoff/clock_mux.magic.gds
+string GDS_FILE /home/jasteve4/Documents/MicroMotorController/openlane/clock_mux/runs/22_12_05_17_38/results/signoff/clock_mux.magic.gds
 string GDS_START 75502
 << end >>
 

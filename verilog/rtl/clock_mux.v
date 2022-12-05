@@ -25,6 +25,10 @@
 
 
 module clock_mux(
+`ifdef USE_POWER_PINS
+ inout wire vccd1,
+ inout wire vssd1,
+`endif
   input wire core_clock,
   input wire io_clock,
   input wire la_oenb,

@@ -1,5 +1,17 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
+-v $(USER_PROJECT_VERILOG)/rtl/async_reg.v
+-v $(USER_PROJECT_VERILOG)/rtl/backend_cycle_controller.v
+-v $(USER_PROJECT_VERILOG)/rtl/clock_mux.v
+-v $(USER_PROJECT_VERILOG)/rtl/controller_core.v
+-v $(USER_PROJECT_VERILOG)/rtl/defines.v
+-v $(USER_PROJECT_VERILOG)/rtl/dot_driver.v
+-v $(USER_PROJECT_VERILOG)/rtl/driver_core.v
+-v $(USER_PROJECT_VERILOG)/rtl/driver_sequencer.v
+-v $(USER_PROJECT_VERILOG)/rtl/HBrigeDriver.v
+-v $(USER_PROJECT_VERILOG)/rtl/impulse.v
+-v $(USER_PROJECT_VERILOG)/rtl/sequencer_chip.v
+-v $(USER_PROJECT_VERILOG)/rtl/spi_core.v
+-v $(USER_PROJECT_VERILOG)/rtl/system_controller.v
 
  

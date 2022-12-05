@@ -216,6 +216,7 @@ module user_project_wrapper #(
   assign io_out[10]                  = driver_io[18];
   assign io_out[9]                  = driver_io[19];
   assign io_clock                   = io_in[8];
+  //assign 
 //  assign io_out[7]                 = 0;
 //  assign io_out[6]                 = 0;
 //  assign io_out[5]                 = 0;

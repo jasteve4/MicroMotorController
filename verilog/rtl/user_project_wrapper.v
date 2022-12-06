@@ -37,14 +37,8 @@ module user_project_wrapper #(
     parameter BITS = 32
 ) (
 `ifdef USE_POWER_PINS
-    inout wire vdda1,	// User area 1 3.3V supply
-    inout wire vdda2,	// User area 2 3.3V supply
-    inout wire vssa1,	// User area 1 analog ground
-    inout wire vssa2,	// User area 2 analog ground
-    inout wire vccd1,	// User area 1 1.8V supply
-    inout wire vccd2,	// User area 2 1.8v supply
-    inout wire vssd1,	// User area 1 digital ground
-    inout wire vssd2,	// User area 2 digital ground
+    inout wire vdd,	// User area 1 1.8V supply
+    inout wire vss,	// User area 1 digital ground
 `endif
 
     // Wishbone Slave ports (WB MI A)
@@ -227,23 +221,10 @@ module user_project_wrapper #(
 //  assign io_out[0]                 = 0;
 //
 
-  clock_mux clock_mux_mod(
-`ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
-`endif
-    .core_clock                      (user_clock2                    ),
-    .io_clock                        (io_clock                      ),
-    .la_oenb                         (la_oenb[63]                   ),
-    .clock_out_a                     (clock_out_a                   ),
-    .clock_out_b                     (clock_out_b                   ),
-    .clock_out_c                     (clock_out_c                   )
-  );
-
   spi_core spi_core_mod(
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock            (clock_out_c),
     .data_out         (spi_data),
@@ -260,6 +241,19 @@ module user_project_wrapper #(
     .la_data_in       (la_data_in[NUM_OF_DRIVERS+10:NUM_OF_DRIVERS+7]   )
   );
 
+  clock_mux clock_mux_mod(
+`ifdef USE_POWER_PINS
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
+`endif
+    .core_clock                      (user_clock2                    ),
+    .io_clock                        (io_clock                      ),
+    .la_oenb                         (la_oenb[63]                   ),
+    .clock_out_a                     (clock_out_a                   ),
+    .clock_out_b                     (clock_out_b                   ),
+    .clock_out_c                     (clock_out_c                   )
+  );
+
   controller_core
   #(
 `ifndef SYNTHESIS
@@ -271,8 +265,8 @@ module user_project_wrapper #(
   controller_core_mod
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     //.la_data_in                      (la_data_in[NUM_OF_DRIVERS+7+4:4] ),
     //.la_oenb                         (la_oenb[NUM_OF_DRIVERS+7+4:4]    ),
@@ -319,8 +313,8 @@ module user_project_wrapper #(
   driver_core_0
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_c                 ),
     .clock_a                        (clock_out[0]                 ),
@@ -345,8 +339,8 @@ module user_project_wrapper #(
   driver_core_1
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_a                 ),
     .clock_a                        (clock_out[1]                 ),
@@ -371,8 +365,8 @@ module user_project_wrapper #(
   driver_core_2
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_a                 ),
     .clock_a                        (clock_out[2]                 ),
@@ -397,8 +391,8 @@ module user_project_wrapper #(
   driver_core_3
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_a                 ),
     .clock_a                        (clock_out[3]                 ),
@@ -423,8 +417,8 @@ module user_project_wrapper #(
   driver_core_4
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_a                 ),
     .clock_a                        (clock_out[4]                 ),
@@ -438,7 +432,7 @@ module user_project_wrapper #(
     .inverter_select_a              (inverter_select[4]           ),
     .driver_io                      (driver_io[9:8]               )
   );
-
+/*
   driver_core
   #(
 `ifndef SYNTHESIS
@@ -449,8 +443,8 @@ module user_project_wrapper #(
   driver_core_5
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_b                 ),
     .clock_a                        (clock_out[5]                 ),
@@ -475,8 +469,8 @@ module user_project_wrapper #(
   driver_core_6
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_b                 ),
     .clock_a                        (clock_out[6]                 ),
@@ -501,8 +495,8 @@ module user_project_wrapper #(
   driver_core_7
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_b                 ),
     .clock_a                        (clock_out[7]                 ),
@@ -516,7 +510,7 @@ module user_project_wrapper #(
     .inverter_select_a              (inverter_select[7]           ),
     .driver_io                      (driver_io[15:14]             )
   );
-
+*/
   driver_core
   #(
 `ifndef SYNTHESIS
@@ -527,8 +521,8 @@ module user_project_wrapper #(
   driver_core_8
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_b                 ),
     .clock_a                        (clock_out[8]                 ),
@@ -553,8 +547,8 @@ module user_project_wrapper #(
   driver_core_9
   (
 `ifdef USE_POWER_PINS
-    .vccd1                           (vccd1                         ),
-    .vssd1                           (vssd1                         ),
+    .vdd                           (vccd1                         ),
+    .vss                           (vssd1                         ),
 `endif
     .clock                          (clock_out_c                 ),
     .clock_a                        (clock_out[9]                 ),

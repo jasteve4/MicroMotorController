@@ -461,13 +461,13 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__filltie TAP_420 ();
  gf180mcu_fd_sc_mcu7t5v0__filltie TAP_421 ();
  gf180mcu_fd_sc_mcu7t5v0__filltie TAP_422 ();
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_1 input1 (.I(la_oenb),
+ gf180mcu_fd_sc_mcu7t5v0__dlyb_1 input1 (.I(la_oenb),
     .Z(net1));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 output2 (.I(clknet_1_0__leaf_net2),
+ gf180mcu_fd_sc_mcu7t5v0__dlyd_1 output2 (.I(clknet_1_0__leaf_net2),
     .Z(clock_out_a));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 output3 (.I(net3),
+ gf180mcu_fd_sc_mcu7t5v0__dlyd_1 output3 (.I(net3),
     .Z(clock_out_b));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 output4 (.I(net4),
+ gf180mcu_fd_sc_mcu7t5v0__dlyd_1 output4 (.I(net4),
     .Z(clock_out_c));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_16 clkbuf_0_core_clock (.I(core_clock),
     .Z(clknet_0_core_clock));
@@ -486,8 +486,11 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA_input1_I (.I(la_oenb));
  gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA__3__D (.I(net1));
  gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA_output4_I (.I(net4));
+ gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA_clkbuf_1_1__f_net2_I (.I(clknet_0_net2));
+ gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA_clkbuf_1_0__f_net2_I (.I(clknet_0_net2));
  gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA__4__I (.I(clknet_1_0__leaf_net2));
  gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA_output2_I (.I(clknet_1_0__leaf_net2));
+ gf180mcu_fd_sc_mcu7t5v0__antenna ANTENNA__5__I (.I(clknet_1_1__leaf_net2));
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_0_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_0_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_0_37 ();
@@ -508,8 +511,8 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_0_314 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_0_317 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_0_321 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_0_329 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_0_345 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_0_339 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_0_347 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_0_349 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_0_352 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_0_384 ();
@@ -639,10 +642,10 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_6_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_6_416 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_7_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_7_9 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_7_13 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_7_45 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_7_61 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_7_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_7_41 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_7_57 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_7_65 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_7_69 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_7_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_7_137 ();
@@ -723,12 +726,12 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_10_392 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_10_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_10_416 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_11_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_11_53 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_11_69 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_11_73 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_11_137 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_11_141 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_11_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_11_18 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_11_70 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_11_73 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_11_76 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_11_140 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_11_144 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_11_208 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_11_212 ();
@@ -846,10 +849,8 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_16_392 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_16_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_16_416 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_17_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_17_10 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_17_64 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_17_68 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_17_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_17_66 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_17_70 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_17_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_17_137 ();
@@ -871,9 +872,9 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_17_419 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_18_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_18_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_18_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_18_101 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_18_105 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_18_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_18_88 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_18_104 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_18_108 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_18_172 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_18_176 ();
@@ -889,9 +890,9 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_18_392 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_18_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_18_416 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_19_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_19_53 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_19_69 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_19_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_19_66 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_19_70 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_19_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_19_137 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_19_141 ();
@@ -912,9 +913,11 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_19_419 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_20_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_20_34 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_20_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_20_101 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_20_105 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_20_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_20_88 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_20_92 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_20_100 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_20_104 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_20_108 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_20_174 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_20_176 ();
@@ -977,8 +980,11 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_23_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_23_89 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_97 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_130 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_23_134 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_23_101 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_131 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_135 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_23_139 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_23_141 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_23_144 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_23_208 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_23_212 ();
@@ -997,18 +1003,16 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_24_2 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_24_37 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_53 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_55 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_24_62 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_78 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_86 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_53 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_57 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_24_65 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_81 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_89 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_105 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_108 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_111 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_113 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_116 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_168 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_176 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_111 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_24_117 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_24_169 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_24_179 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_24_243 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_24_247 ();
@@ -1042,7 +1046,11 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_25_413 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_25_417 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_25_419 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_26_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_10 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_14 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_26_22 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_26 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_26_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_26_37 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_101 ();
@@ -1062,14 +1070,9 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_26_392 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_26_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_26_416 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_10 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_14 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_22 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_27_26 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_27_58 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_66 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_70 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_27_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_69 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_27_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_137 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_141 ();
@@ -1088,12 +1091,11 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_27_413 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_27_417 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_27_419 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_9 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_13 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_15 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_22 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_30 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_2 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_10 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_14 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_28_22 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_28_26 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_28_34 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_28_37 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_28_101 ();
@@ -1524,10 +1526,10 @@ module clock_mux (clock_out_a,
  gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_48_408 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_48_416 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_49_2 ();
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_49_9 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_49_13 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_49_45 ();
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_49_61 ();
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_49_37 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_49_41 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_49_57 ();
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_49_65 ();
  gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_49_69 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_49_73 ();
  gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_49_137 ();

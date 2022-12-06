@@ -24,8 +24,8 @@
  */
 module spi_core(
 `ifdef USE_POWER_PINS
-    inout wire vssd1,	// User area 2 analog ground
-    inout wire vccd1,	// User area 1 1.8V supply
+    inout wire vss,	// User area 2 analog ground
+    inout wire vdd,	// User area 1 1.8V supply
 `endif
   input wire clock,
   output wire [31:0] data_out,

@@ -12,7 +12,7 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT -4.800 41.160 2.400 42.280 ;
+        RECT 0.000 41.440 4.000 42.000 ;
     END
   END clock_out_a
   PIN clock_out_b
@@ -20,7 +20,7 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT -4.800 124.040 2.400 125.160 ;
+        RECT 0.000 124.320 4.000 124.880 ;
     END
   END clock_out_b
   PIN clock_out_c
@@ -28,7 +28,7 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT -4.800 206.920 2.400 208.040 ;
+        RECT 0.000 207.200 4.000 207.760 ;
     END
   END clock_out_c
   PIN core_clock
@@ -36,7 +36,7 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal2 ;
-        RECT 61.880 -4.800 63.000 2.400 ;
+        RECT 62.160 0.000 62.720 4.000 ;
     END
   END core_clock
   PIN io_clock
@@ -44,7 +44,7 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal3 ;
-        RECT 247.600 124.040 254.800 125.160 ;
+        RECT 246.000 124.320 250.000 124.880 ;
     END
   END io_clock
   PIN la_oenb
@@ -52,49 +52,45 @@ MACRO clock_mux
     USE SIGNAL ;
     PORT
       LAYER Metal2 ;
-        RECT 186.760 -4.800 187.880 2.400 ;
+        RECT 187.040 0.000 187.600 4.000 ;
     END
   END la_oenb
-  PIN vccd1
+  PIN vdd
     DIRECTION INOUT ;
     USE POWER ;
     PORT
       LAYER Metal4 ;
-        RECT 10.170 15.380 13.270 231.580 ;
+        RECT 22.240 15.380 23.840 231.580 ;
     END
     PORT
       LAYER Metal4 ;
-        RECT 190.170 15.380 193.270 231.580 ;
+        RECT 175.840 15.380 177.440 231.580 ;
     END
-  END vccd1
-  PIN vssd1
+  END vdd
+  PIN vss
     DIRECTION INOUT ;
     USE GROUND ;
     PORT
       LAYER Metal4 ;
-        RECT 28.770 15.380 31.870 231.580 ;
+        RECT 99.040 15.380 100.640 231.580 ;
     END
-    PORT
-      LAYER Metal4 ;
-        RECT 208.770 15.380 211.870 231.580 ;
-    END
-  END vssd1
+  END vss
   OBS
       LAYER Metal1 ;
         RECT 6.720 15.380 243.040 231.580 ;
       LAYER Metal2 ;
-        RECT 9.100 2.700 221.620 231.470 ;
-        RECT 9.100 1.820 61.580 2.700 ;
-        RECT 63.300 1.820 186.460 2.700 ;
-        RECT 188.180 1.820 221.620 2.700 ;
+        RECT 8.540 4.300 224.420 231.470 ;
+        RECT 8.540 3.500 61.860 4.300 ;
+        RECT 63.020 3.500 186.740 4.300 ;
+        RECT 187.900 3.500 224.420 4.300 ;
       LAYER Metal3 ;
-        RECT 1.960 208.340 247.600 231.420 ;
-        RECT 2.700 206.620 247.600 208.340 ;
-        RECT 1.960 125.460 247.600 206.620 ;
-        RECT 2.700 123.740 247.300 125.460 ;
-        RECT 1.960 42.580 247.600 123.740 ;
-        RECT 2.700 40.860 247.600 42.580 ;
-        RECT 1.960 15.540 247.600 40.860 ;
+        RECT 4.000 208.060 246.000 231.420 ;
+        RECT 4.300 206.900 246.000 208.060 ;
+        RECT 4.000 125.180 246.000 206.900 ;
+        RECT 4.300 124.020 245.700 125.180 ;
+        RECT 4.000 42.300 246.000 124.020 ;
+        RECT 4.300 41.140 246.000 42.300 ;
+        RECT 4.000 15.540 246.000 41.140 ;
   END
 END clock_mux
 END LIBRARY

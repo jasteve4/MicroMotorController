@@ -1,7 +1,7 @@
 (DELAYFILE
  (SDFVERSION "3.0")
  (DESIGN "clock_mux")
- (DATE "Mon Dec  5 22:39:14 2022")
+ (DATE "Tue Dec  6 02:35:08 2022")
  (VENDOR "Parallax")
  (PROGRAM "STA")
  (VERSION "2.3.2")
@@ -19,27 +19,30 @@
     (INTERCONNECT la_oenb input1.I (0.000:0.000:0.000))
     (INTERCONNECT la_oenb ANTENNA_input1_I.I (0.000:0.000:0.000))
     (INTERCONNECT _1_.Z _2_.I (0.000:0.000:0.000))
-    (INTERCONNECT _2_.Z clkbuf_0_net2.I (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT _2_.Z clkbuf_0_net2.I (0.001:0.001:0.001) (0.001:0.001:0.001))
     (INTERCONNECT _3_.Q _1_.S (0.000:0.000:0.000))
     (INTERCONNECT _4_.Z output3.I (0.000:0.000:0.000))
     (INTERCONNECT _5_.Z output4.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT _5_.Z ANTENNA_output4_I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT input1.Z _3_.D (0.001:0.001:0.001) (0.001:0.001:0.001))
     (INTERCONNECT input1.Z ANTENNA__3__D.I (0.001:0.001:0.001) (0.001:0.001:0.001))
-    (INTERCONNECT output2.Z clock_out_a (0.001:0.001:0.001))
+    (INTERCONNECT output2.Z clock_out_a (0.001:0.001:0.001) (0.001:0.001:0.001))
     (INTERCONNECT output3.Z clock_out_b (0.001:0.001:0.001))
-    (INTERCONNECT output4.Z clock_out_c (0.001:0.001:0.001))
+    (INTERCONNECT output4.Z clock_out_c (0.001:0.001:0.001) (0.001:0.001:0.001))
     (INTERCONNECT clkbuf_0_core_clock.Z clkbuf_1_0__f_core_clock.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_0_core_clock.Z clkbuf_1_1__f_core_clock.I (0.001:0.001:0.001) (0.001:0.001:0.001))
     (INTERCONNECT clkbuf_1_0__f_core_clock.Z _1_.I0 (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_1__f_core_clock.Z _3_.CLK (0.000:0.000:0.000))
-    (INTERCONNECT clkbuf_0_net2.Z clkbuf_1_0__f_net2.I (0.000:0.000:0.000) (0.000:0.000:0.000))
-    (INTERCONNECT clkbuf_0_net2.Z clkbuf_1_1__f_net2.I (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT clkbuf_0_net2.Z clkbuf_1_0__f_net2.I (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT clkbuf_0_net2.Z clkbuf_1_1__f_net2.I (0.001:0.001:0.001) (0.001:0.001:0.001))
+    (INTERCONNECT clkbuf_0_net2.Z ANTENNA_clkbuf_1_1__f_net2_I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT clkbuf_0_net2.Z ANTENNA_clkbuf_1_0__f_net2_I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_0__f_net2.Z output2.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_0__f_net2.Z _4_.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_0__f_net2.Z ANTENNA__4__I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_0__f_net2.Z ANTENNA_output2_I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
     (INTERCONNECT clkbuf_1_1__f_net2.Z _5_.I (0.000:0.000:0.000) (0.000:0.000:0.000))
+    (INTERCONNECT clkbuf_1_1__f_net2.Z ANTENNA__5__I.I (0.000:0.000:0.000) (0.000:0.000:0.000))
    )
   )
  )
@@ -48,18 +51,18 @@
   (INSTANCE _1_)
   (DELAY
    (ABSOLUTE
-    (IOPATH I0 Z (0.359:0.359:0.359) (0.518:0.518:0.518))
+    (IOPATH I0 Z (0.261:0.261:0.261) (0.341:0.341:0.341))
     (COND I1===1'b1
-     (IOPATH I0 Z (0.359:0.359:0.359) (0.518:0.518:0.518)))
+     (IOPATH I0 Z (0.261:0.261:0.261) (0.341:0.341:0.341)))
     (COND I1===1'b0
-     (IOPATH I0 Z (0.359:0.359:0.359) (0.518:0.518:0.518)))
-    (IOPATH I1 Z (0.344:0.344:0.344) (0.505:0.505:0.505))
+     (IOPATH I0 Z (0.261:0.261:0.261) (0.341:0.341:0.341)))
+    (IOPATH I1 Z (0.256:0.256:0.256) (0.336:0.336:0.336))
     (COND I0===1'b1
-     (IOPATH I1 Z (0.344:0.344:0.344) (0.505:0.505:0.505)))
+     (IOPATH I1 Z (0.256:0.256:0.256) (0.336:0.336:0.336)))
     (COND I0===1'b0
-     (IOPATH I1 Z (0.344:0.344:0.344) (0.504:0.504:0.504)))
-    (IOPATH S Z (0.364:0.364:0.364) (0.460:0.460:0.460))
-    (IOPATH S Z (0.524:0.524:0.524) (0.581:0.581:0.581))
+     (IOPATH I1 Z (0.256:0.256:0.256) (0.336:0.336:0.336)))
+    (IOPATH S Z (0.258:0.258:0.258) (0.307:0.307:0.307))
+    (IOPATH S Z (0.373:0.373:0.373) (0.389:0.389:0.389))
    )
   )
  )
@@ -68,7 +71,7 @@
   (INSTANCE _2_)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.553:0.553:0.553) (0.530:0.531:0.531))
+    (IOPATH I Z (0.401:0.401:0.402) (0.385:0.385:0.386))
    )
   )
  )
@@ -77,17 +80,17 @@
   (INSTANCE _3_)
   (DELAY
    (ABSOLUTE
-    (IOPATH CLK Q (1.133:1.133:1.133) (0.979:0.979:0.979))
+    (IOPATH CLK Q (0.781:0.781:0.781) (0.688:0.688:0.688))
    )
   )
   (TIMINGCHECK
-    (SETUP (posedge D) (posedge CLK) (0.422:0.422:0.422))
-    (SETUP (negedge D) (posedge CLK) (0.463:0.463:0.463))
-    (HOLD (posedge D) (posedge CLK) (0.012:0.012:0.012))
-    (HOLD (negedge D) (posedge CLK) (-0.003:-0.003:-0.003))
-    (WIDTH (posedge CLK) (0.707:0.707:0.707))
-    (WIDTH (negedge CLK) (0.853:0.853:0.853))
-    (PERIOD CLK (1.709:1.709:1.709))
+    (SETUP (posedge D) (posedge CLK) (0.254:0.254:0.254))
+    (SETUP (negedge D) (posedge CLK) (0.314:0.314:0.314))
+    (HOLD (posedge D) (posedge CLK) (0.033:0.033:0.033))
+    (HOLD (negedge D) (posedge CLK) (0.006:0.006:0.006))
+    (WIDTH (posedge CLK) (0.495:0.495:0.495))
+    (WIDTH (negedge CLK) (0.553:0.553:0.553))
+    (PERIOD CLK (1.107:1.107:1.107))
   )
  )
  (CELL
@@ -95,7 +98,7 @@
   (INSTANCE _4_)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.269:0.269:0.269) (0.330:0.330:0.330))
+    (IOPATH I Z (0.204:0.204:0.204) (0.232:0.232:0.232))
    )
   )
  )
@@ -104,43 +107,43 @@
   (INSTANCE _5_)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.368:0.368:0.368) (0.402:0.402:0.402))
+    (IOPATH I Z (0.284:0.284:0.284) (0.293:0.293:0.293))
    )
   )
  )
  (CELL
-  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__clkbuf_1")
+  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__dlyb_1")
   (INSTANCE input1)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.430:0.430:0.430) (0.403:0.403:0.403))
+    (IOPATH I Z (1.017:1.017:1.017) (1.096:1.096:1.096))
    )
   )
  )
  (CELL
-  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__buf_1")
+  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__dlyd_1")
   (INSTANCE output2)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (1.219:1.219:1.219) (0.892:0.892:0.892))
+    (IOPATH I Z (2.847:2.847:2.847) (2.820:2.820:2.820))
    )
   )
  )
  (CELL
-  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__buf_1")
+  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__dlyd_1")
   (INSTANCE output3)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (1.227:1.227:1.227) (0.898:0.898:0.898))
+    (IOPATH I Z (2.851:2.851:2.851) (2.827:2.827:2.827))
    )
   )
  )
  (CELL
-  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__buf_1")
+  (CELLTYPE "gf180mcu_fd_sc_mcu7t5v0__dlyd_1")
   (INSTANCE output4)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (1.259:1.259:1.259) (0.925:0.925:0.925))
+    (IOPATH I Z (2.869:2.869:2.869) (2.853:2.853:2.853))
    )
   )
  )
@@ -149,7 +152,7 @@
   (INSTANCE clkbuf_0_core_clock)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.298:0.298:0.298) (0.305:0.305:0.305))
+    (IOPATH I Z (0.225:0.225:0.225) (0.216:0.216:0.216))
    )
   )
  )
@@ -158,7 +161,7 @@
   (INSTANCE clkbuf_1_0__f_core_clock)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.286:0.286:0.286) (0.301:0.301:0.301))
+    (IOPATH I Z (0.214:0.214:0.214) (0.210:0.210:0.210))
    )
   )
  )
@@ -167,7 +170,7 @@
   (INSTANCE clkbuf_1_1__f_core_clock)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.285:0.285:0.285) (0.299:0.299:0.299))
+    (IOPATH I Z (0.213:0.213:0.213) (0.209:0.209:0.209))
    )
   )
  )
@@ -176,7 +179,7 @@
   (INSTANCE clkbuf_0_net2)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.434:0.434:0.434) (0.416:0.416:0.416))
+    (IOPATH I Z (0.317:0.317:0.317) (0.299:0.299:0.299))
    )
   )
  )
@@ -185,7 +188,7 @@
   (INSTANCE clkbuf_1_0__f_net2)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.307:0.307:0.307) (0.320:0.320:0.320))
+    (IOPATH I Z (0.225:0.225:0.225) (0.222:0.222:0.222))
    )
   )
  )
@@ -194,7 +197,7 @@
   (INSTANCE clkbuf_1_1__f_net2)
   (DELAY
    (ABSOLUTE
-    (IOPATH I Z (0.296:0.296:0.296) (0.309:0.309:0.309))
+    (IOPATH I Z (0.219:0.219:0.219) (0.214:0.214:0.214))
    )
   )
  )
